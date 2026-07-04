@@ -24,10 +24,10 @@ app.post("/contact", async (req, res) => {
       }
     });
 
-    await transporter.sendMail({
-      from: process.env.EMAIL_USER,
-      to: process.env.EMAIL_USER,
-      subject: `New Message From ${name}`,
+   await transporter.sendMail({
+  from: `"Portfolio Contact" <${process.env.EMAIL_USER}>`,
+  to: process.env.EMAIL_USER,
+  subject: `New Message From ${name}`,
       html: `
         <h2>Portfolio Contact Form</h2>
         <p><b>Name:</b> ${name}</p>
